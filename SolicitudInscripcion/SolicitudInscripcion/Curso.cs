@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SolicitudInscripcion
 {
-    class Alumno
+    class Curso
     {
     }
 }
