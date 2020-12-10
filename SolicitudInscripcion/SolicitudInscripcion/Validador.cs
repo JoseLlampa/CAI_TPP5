@@ -31,7 +31,7 @@ namespace SolicitudInscripcion
 
         private static bool ExisteEstudiante(int registro)
         {
-            string path = @"C:\Users\hecto\source\repos\CAI_TPP5\SolicitudInscripcion\SolicitudInscripcion\bin\Debug\Estudiante.csv";
+            string path = @"C:\Users\Administrador\Documents\GitHub\CAI_TPP5\SolicitudInscripcion\SolicitudInscripcion\bin\Debug\Estudiante.csv";
             String[] lineas = File.ReadAllLines(path);
             bool existe = false;
 
