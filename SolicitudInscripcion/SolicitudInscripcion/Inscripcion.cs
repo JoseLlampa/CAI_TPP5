@@ -50,6 +50,8 @@ namespace SolicitudInscripcion
             {
                 int codigoMateria = Materia.IngresarMostrarMateria();
 
+                
+
                 if (codigoMateria != -1)
                 {
                     Console.WriteLine("Ingrese código de curso");
@@ -60,13 +62,13 @@ namespace SolicitudInscripcion
                     InscribirACurso(registro, codigoCurso, codigoMateria);
                     contador += 1;
                 }
+
                 Console.WriteLine("¿Desea seguir inscribiendose a materias? S/N");
                 respuesta = Console.ReadLine();
                 respuestaValidada = Validador.ValidarIngresoSoN(respuesta);
-                Console.WriteLine($"contador = {contador}");
-                Console.WriteLine($"respuesta = {respuesta.ToUpper()}");
+                //flag
 
-            } while (respuestaValidada.ToUpper() == "S" && contador < 4);
+            } while (respuestaValidada.ToUpper() == "S" && contador <4);
 
             if (contador == 4)
             {
@@ -90,7 +92,7 @@ namespace SolicitudInscripcion
             StreamWriter stream = File.AppendText(path);
             stream.WriteLine(registro + ";" + nombreEstudiante + ";" + codigoMateria + ";" + nombreMateria + ";" + codigoCurso + ";" + docenteTitular + ";pendiente");
             stream.Close();
-            Console.WriteLine("La inscripción del curso se realizó correctamente");
+            Console.WriteLine("La inscripción se guardo correctamente y se encuentra pendiente a confirmar");
 
         }
 
