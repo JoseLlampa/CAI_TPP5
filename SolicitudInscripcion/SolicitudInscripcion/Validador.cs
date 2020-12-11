@@ -17,7 +17,7 @@ namespace SolicitudInscripcion
                 var in_registro = Console.ReadLine();
                 if (!int.TryParse(in_registro, out int registro))
                 {
-                    Console.WriteLine("No se ha ingresado un número de registro válido");
+                    Console.WriteLine("Ingrese un número entero");
                     continue;
                 }
                 if (!ExisteEstudiante(registro))
@@ -47,6 +47,47 @@ namespace SolicitudInscripcion
             return existe;
         }
 
+        public static string ValidarIngresoSoN(string ingreso)
+        {
+            bool validado = false;
+            string ingresonuevo = ingreso;
+            do
+            {
+
+                if (ingresonuevo.ToUpper() == "S" || ingresonuevo.ToUpper() == "N")
+                {
+                    validado = true;
+                }
+                else
+                {
+                    Console.WriteLine("Ingrese S para indicar Sí, o ingrese N para indicar No");
+                    ingresonuevo = Console.ReadLine();
+                }
+
+            } while (!validado);
+
+            return ingresonuevo;
+        }
+
+        public static void ValidarIngresoEntero(string ingreso)
+        {
+            bool validado = false;
+            string ingresonuevo = ingreso;
+            do
+            {
+
+                if (int.TryParse(ingresonuevo, out int entero))
+                {
+                    validado = true;
+                }
+                else
+                {
+                    Console.WriteLine("Ingrese un número entero");
+                    ingresonuevo = Console.ReadLine();
+                }
+
+            } while (!validado);
+        }
 
     }
 }

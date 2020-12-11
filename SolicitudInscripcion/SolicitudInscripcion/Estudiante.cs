@@ -29,7 +29,7 @@ namespace SolicitudInscripcion
                 }
             }
             return Nombre;
-            //TODO: Se puede agregar un mensaje de error si no se encuentra.
+            //TODO: Agregar un mensaje de error si no se encuentra.
         }
 
     }
